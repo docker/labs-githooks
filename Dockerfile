@@ -26,4 +26,4 @@ WORKDIR /app
 COPY --from=builder /tmp/nix-store-closure /nix/store
 COPY --from=builder /tmp/output/ /app/
 
-ENTRYPOINT ["/app/result/bin/pre-commit"]
+ENTRYPOINT ["/app/result/bin/pre-commit-wrapper"]

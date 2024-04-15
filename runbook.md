@@ -22,7 +22,7 @@ docker build -t vonwig/pre-commit .
 
 ```sh
 docker run -it --rm \
-           -v $PWD:/Users/slim/slimslenderslacks/githooks \
+           -v $PWD:/project \
            -v /var/run/docker.sock:/var/run/docker.sock \
            --mount "type=volume,source=chatsdlc,target=/config" \
            --mount "type=volume,source=chatsdlc-cache,target=/.cache" \
@@ -44,12 +44,12 @@ repos:
 #    rev: main
 #    hooks:
 #    -   id: docker-policy
-#-   repo: local
-#    hooks:
-#    -   id: docker-policy
-#        name: Docker Policy
-#        language: docker_image
-#        entry: vonwig/docker-policy
+-   repo: local
+    hooks:
+    -   id: docker-policy
+        name: Docker Policy
+        language: docker_image
+        entry: vonwig/docker-policy
          
 EOF
 docker cp - aasdflkjasdf:/config < <(tar -c -f - pre-commit-config.yaml)
