@@ -140,7 +140,6 @@ repos:
 EOF
 docker cp - aasdflkjasdf:/config < <(tar -c -f - pre-commit-config.yaml)
 docker rm aasdflkjasdf
-rm pre-commit-config.yaml
 ```
 
 ## Local versus GitHub definition

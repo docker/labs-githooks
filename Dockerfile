@@ -26,4 +26,5 @@ WORKDIR /app
 COPY --from=builder /tmp/nix-store-closure /nix/store
 COPY --from=builder /tmp/output/ /app/
 
+# this is just the default endpoint because there are several
 ENTRYPOINT ["/app/result/bin/pre-commit-wrapper"]
