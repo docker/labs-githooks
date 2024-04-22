@@ -140,11 +140,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1713210967,
-        "narHash": "sha256-RqOfUgIGyVAqREcIkjoEeqP6VqqZqD9cE7i5e2tzIRA=",
+        "lastModified": 1713665026,
+        "narHash": "sha256-pDN3MZ7mG4PNR/O/tyhOd64gL5VCStZhowklhtFfnQc=",
         "owner": "slimslenderslacks",
         "repo": "pre-commit",
-        "rev": "ebfc2bd4d399a2dba7bbe6cebeb0fa5bea6194bb",
+        "rev": "143c21e829726bfa28438541c4c3104ae77eea40",
         "type": "github"
       },
       "original": {
