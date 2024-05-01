@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+HERE="$(cd "$(dirname "$0")/../.." && pwd)"
+
+docker run --rm \
+	-v $HERE:/project \
+	-v /var/run/docker.sock:/var/run/docker.sock \
+        --mount "type=volume,source=chatsdlc,target=/config" \
+        --mount "type=volume,source=chatsdlc-cache,target=/.cache" \
+        --entrypoint /app/result/bin/commit-msg-wrapper \
+	vonwig/pre-commit "$@"

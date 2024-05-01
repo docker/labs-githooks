@@ -1,3 +1,8 @@
 /.direnv/
 /.venv/
 /result
+/pre-commit-config.yaml
+/projects/setup/result
+/projects/setup/.direnv/
+/.lsp/
+/.clj-kondo/
