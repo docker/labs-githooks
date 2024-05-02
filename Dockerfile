@@ -6,7 +6,7 @@ RUN mkdir /tmp/nix-store-closure
 
 # ignore SC2046 because the output of nix-store -qR will never have spaces - this is safe here
 # hadolint ignore=SC2046
-RUN --mount=type=cache,target=/nix,from=nixos/nix:latest,source=/nix \
+RUN --mount=type=cache,target=/nix,from=nixos/nix:latest@sha256:3f6c77ee4d2c82e472e64e6cd7087241dc391421a0b42c22e6849c586d5398d9,source=/nix \
     --mount=type=cache,target=/root/.cache \
     --mount=type=bind,target=/tmp/build \
     <<EOF

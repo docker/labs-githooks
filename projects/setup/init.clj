@@ -9,12 +9,17 @@
 (def linter-registry
   {:markdownlint {:id "markdownlint"
                   :name "markdown linter"
-                  :entry "vonwig/docker-policy"
+                  :entry "markdownlint/markdownlint"
                   :files "\\.md$"}
    :hadolint {:id "hadolint"
               :name "hadolint Dockerfile linter"
               :entry "hadolint/hadolint"
               :files "Dockerfile"}
+   :eslint {:id "eslint"
+            :name "eslint in docker"
+            :files "\\.[jt]sx?$"
+            :types ["file"]
+            :entry "cytopia/eslint:latest"}
    :golangci-lint {:id "golangcli-lint"
                    :name "golang cli"
                    :entry "golangci/golangci-lint"

@@ -34,7 +34,8 @@ pip install pre-commit
 ## Dockerize
 
 ```sh
-docker build -t vonwig/pre-commit .
+docker buildx build --builder hydrobuild --platform linux/amd64,linux/arm64 -t vonwig/pre-commit --push .
+docker buildx build --builder hydrobuild --platform linux/amd64,linux/arm64 -t vonwig/githooks-setup --file ./projects/setup/Dockerfile --push ./projects/setup
 ```
 
 ### running pre-commit hook
