@@ -34,6 +34,8 @@
    :Nix :none
    :Clojure :none
    :JSON :none
+   :Javascript :eslint
+   :Typescript :eslint
    :Markdown :markdownlint
    :Go :golangci-lint})
 
