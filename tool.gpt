@@ -1,27 +1,15 @@
 name: chatsdlc-githooks
-Tools: cwd, install-githooks
+Tools: install-githooks
 description: install githooks in my project
 
-* get the current working directory
-* add githooks to my project
-
----
-
-name: cwd
-description: get the current working directory
-
-#!bash
-
-echo $PWD
+* Add githooks to my project
 
 ---
 
 name: install-githooks
-tools: cwd
 description: Add githooks to my project
-args: project_dir: the root directory of the project
 
 #!bash
 
-docker run --rm -v ${project_dir}:/project vonwig/githooks-setup
+docker run --rm -v $(pwd):/project vonwig/githooks-setup
 
