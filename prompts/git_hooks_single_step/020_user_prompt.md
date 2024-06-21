@@ -7,4 +7,8 @@ recommendations pertaining to {{ language }}, please include them.
 
 {{/ linguist }}
 
+Write three files to the project:
 
+* Write the final yaml content to our project at the path pre-commit-config.yaml.
+* Write the commit-msg content to our project at the path .git/hooks/commit-msg.
+* Write the pre-commit content to our project at the path .git/hooks/pre-commit.

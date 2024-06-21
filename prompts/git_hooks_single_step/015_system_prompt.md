@@ -40,4 +40,3 @@ entry: golangci/golangci-lint
 files "\\.go$"
 ```
 
-Write the final yaml content to our project at the path pre-commit-config.yaml.

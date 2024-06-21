@@ -1,36 +1,54 @@
-## Running the git_hooks prompts
+# Background
+
+## Prompts Only
+
+Run local prompts - does not require a github push.
 
 ```sh
-bb uberjar prompts.jar -m prompts
-bb -m prompts run /Users/slim/docker/lsp jimclark106 darwin git_hooks_pre
-```
-
-```sh
-bb uberjar prompts.jar -m prompts
-bb -m prompts run /Users/slim/docker/lsp jimclark106 darwin git_hooks_pre1
-```
-
-```sh
-#docker:command=git_hooks_pre
 docker run --rm \
            -it \
            -v /var/run/docker.sock:/var/run/docker.sock \
+           --mount type=volume,source=docker-prompts,target=/prompts \
+           --mount type=bind,source=/Users/slim/docker/labs-githooks/prompts,target=/my-prompts \
+           --workdir /my-prompts \
+           --env "OPENAI_API_KEY=$(cat /Users/slim/.openai-api-key)" \
+           vonwig/prompts:local \
+                                /Users/slim/docker/lsp \
+                                jimclark106 \
+                                darwin \
+                                git_hooks
+```
+
+## Running the git_hooks prompts
+
+
+```sh
+#docker:command=git_hooks
+docker run --rm \
+           -it \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           --mount type=volume,source=docker-prompts,target=/prompts \
            --env "OPENAI_API_KEY=$(cat /Users/slim/.openai-api-key)" \
            vonwig/prompts:local \
                                 run \
                                 /Users/slim/docker/lsp \
                                 jimclark106 \
                                 darwin \
-                                github:docker/labs-githooks?path=prompts/git_hooks_pre
+                                "github:docker/labs-githooks?ref=main&path=prompts/git_hooks"
 ```
 
 ```sh
-#docker:command=run-githooks
-bb -m prompts run /Users/slim/docker/lsp jimclark106 darwin git_hooks
-```
-
-```sh
-#docker:command=run-githooks-single-step
-bb -m prompts run /Users/slim/docker/lsp jimclark106 darwin git_hooks_single_step
+#docker:command=git_hooks_single_step
+docker run --rm \
+           -it \
+           -v /var/run/docker.sock:/var/run/docker.sock \
+           --mount type=volume,source=docker-prompts,target=/prompts \
+           --env "OPENAI_API_KEY=$(cat /Users/slim/.openai-api-key)" \
+           vonwig/prompts:local \
+                                run \
+                                /Users/slim/docker/lsp \
+                                jimclark106 \
+                                darwin \
+                                "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step"
 ```
 
