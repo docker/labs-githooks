@@ -23,6 +23,9 @@ functions:
                 content:
                   type: string
                   description: the content that should be written to a file
+                executable:
+                  type: boolean
+                  description: whether to make the file executable
     container:
-        image: vonwig/function_write_file:latest
+        image: vonwig/function_write_files:latest
 ---
