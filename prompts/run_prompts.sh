@@ -1,14 +1,18 @@
 #!/bin/bash
 
+echo $1
+echo $2
+
 docker run --rm \
-           -it \
-           -v /var/run/docker.sock:/var/run/docker.sock \
-           --mount type=volume,source=docker-prompts,target=/prompts \
-           --mount type=bind,source=$HOME/.openai-api-key,target=/root/.openai-api-key \
-           vonwig/prompts:local \
-                                run \
-                                $PWD \
-                                $USER \
+	   -it \
+	   -v /var/run/docker.sock:/var/run/docker.sock \
+	   --mount type=volume,source=docker-prompts,target=/prompts \
+	   --mount type=bind,source=$HOME/.openai-api-key,target=/root/.openai-api-key \
+	   --mount "type=bind,source=$2,target=/project" \
+	   vonwig/prompts:local \
+				run \
+				$PWD \
+				$USER \
 				"$(uname -o)" \
-                                github:docker/labs-githooks?path=prompts/git_hooks_single_step
+				"$1"
 

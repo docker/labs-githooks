@@ -17,7 +17,6 @@ docker run --rm \
            -v /var/run/docker.sock:/var/run/docker.sock \
            --mount type=volume,source=docker-prompts,target=/prompts \
            --mount type=bind,source=/Users/slim/docker/labs-githooks/prompts,target=/my-prompts \
-           --mount type=bind,source=$HOME/.openai-api-key,target=/root/.openai-api-key \
            --workdir /my-prompts \
            vonwig/prompts:local \
                                 /Users/slim/docker/lsp \
