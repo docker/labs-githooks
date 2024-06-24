@@ -28,9 +28,9 @@ prompts/
 
 Make sure that your local Docker Desktop engine is running. Besides a running docker engine and access to Docker Hub, no other tools need to be pre-installed.
 
-The default version of scripts below use OPENAI.  To run these tests, you will need to write your OpenAI API key to the a file named `$HOME/.openai-api-key`.
+The default version of scripts use openai.  To run these tests, you will need to write your OpenAI API key to the a file named `$HOME/.openai-api-key`.
 
-The second argument to each of the scripts below should be the path to the root of a git cloned project.
+The second argument to each of the scripts below should be the path to the root of some git cloned project.
 
 
 ### githooks
@@ -41,7 +41,7 @@ Start by prompting an LLM with a prompt such as:
 How do I setup githooks?
 ```
 
-The results are useful but very general and certainly not project specific.
+The results are useful but very general and lack project context.
 
 ### git_hooks_with_linguist
 
@@ -50,7 +50,7 @@ linguistic analysis on the project and _then_ ask it to setup the githooks.
 You can try this verion of the prompts using OpenAI by running.
 
 ```sh
-./prompts/run_prompts.sh github:docker/labs-githooks?ref=main&path=prompts/git_hooks_with_linguist {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_with_linguist" {root of your project}
 ```
 
 ### git_hooks
@@ -62,7 +62,7 @@ we describe how to setup githooks using the [pre-commit](https://github.com/pre-
 Run this set of prompts using:
 
 ```sh
-./prompts/run_prompts.sh github:docker/labs-githooks?ref=main&path=prompts/git_hooks {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks" {root of your project}
 ```
 
 ### git_hooks_single_step
@@ -71,7 +71,7 @@ Finally, a set of prompts which can takes the LLM response and then calls a func
 This script will make updates to your .git/hooks folder and add an assistant authored pre-commig-config.yaml file.  It can be run using:
 
 ```sh
-./prompts/run_prompts.sh github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step" {root of your project}
 ```
 
 ## Summary

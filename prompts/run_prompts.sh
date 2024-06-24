@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo $1
-echo $2
-
 docker run --rm \
 	   -it \
 	   -v /var/run/docker.sock:/var/run/docker.sock \
