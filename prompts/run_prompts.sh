@@ -6,9 +6,9 @@ docker run --rm \
 	   --mount type=volume,source=docker-prompts,target=/prompts \
 	   --mount type=bind,source=$HOME/.openai-api-key,target=/root/.openai-api-key \
 	   --mount "type=bind,source=$2,target=/project" \
-	   vonwig/prompts:local \
+	   vonwig/prompts:latest \
 				run \
-				$PWD \
+				"$2" \
 				$USER \
 				"$(uname -o)" \
 				"$1"
