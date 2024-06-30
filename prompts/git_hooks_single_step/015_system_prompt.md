@@ -28,6 +28,7 @@ If we detect `Markdown` in the project, add the following hook to the hooks entr
 id: markdownlint
 name: markdown linter
 entry: markdownlint/markdownlint
+language: docker_image
 files "\\.md$"
 ```
 
@@ -37,6 +38,27 @@ If we detect `Go` in the project, add the following hook to the hooks entry in t
 id: golangcli-lint
 name: golang cli
 entry: golangci/golangci-lint
+language: docker_image
 files "\\.go$"
+```
+
+If we detect `TypeScript` in the project, add the following hook to the hooks entry in the `local` repo entry.
+
+```yaml
+id: standardjs
+name: standardjs linter
+entry: vonwig/standardjs
+language: docker_image
+files "\\.ts$"
+```
+
+If we detect `JavaScript` in the project, add the following hook to the hooks entry in the `local` repo entry.
+
+```yaml
+id: standardjs-docker
+name: standardjs linter
+entry: vonwig/standardjs:latest
+language: docker_image
+files "\\.(js|jsx|mjs|cjs)$"
 ```
 
