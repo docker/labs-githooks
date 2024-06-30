@@ -52,6 +52,6 @@ docker run --rm \
                                 /Users/slim/docker/lsp \
                                 $USER \
                                 $(uname -o) \
-                                "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step"
+                                "github:docker/labs-githooks?ref=slim/prompts/input&path=prompts/git_hooks_single_step"
 ```
 
