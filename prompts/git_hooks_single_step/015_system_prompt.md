@@ -47,9 +47,9 @@ If we detect `TypeScript` in the project, add the following hook to the hooks en
 ```yaml
 id: standardjs
 name: standardjs linter
-entry: vonwig/standardjs
+entry: vonwig/standardjs:latest --typescript
 language: docker_image
-files "\\.ts$"
+files "\\.(ts|tsx)$"
 ```
 
 If we detect `JavaScript` in the project, add the following hook to the hooks entry in the `local` repo entry.
