@@ -5,7 +5,7 @@ extractors:
       - -json
     output-handler: linguist
 tool_choice: auto
-stream: false
+stream: true
 functions:
   - name: write_files
     description: Write a set of files to my project
