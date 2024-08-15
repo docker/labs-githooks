@@ -29,7 +29,7 @@ id: markdownlint
 name: markdown linter
 entry: markdownlint/markdownlint
 language: docker_image
-files "\\.md$"
+files: "\\.md$"
 ```
 
 If we detect `Go` in the project, add the following hook to the hooks entry in the `local` repo entry.
@@ -39,7 +39,7 @@ id: golangcli-lint
 name: golang cli
 entry: golangci/golangci-lint
 language: docker_image
-files "\\.go$"
+files: "\\.go$"
 ```
 
 If we detect `TypeScript` in the project, add the following hook to the hooks entry in the `local` repo entry.
@@ -49,7 +49,7 @@ id: standardjs
 name: standardjs linter
 entry: vonwig/standardjs:latest --typescript
 language: docker_image
-files "\\.(ts|tsx)$"
+files: "\\.(ts|tsx)$"
 ```
 
 If we detect `JavaScript` in the project, add the following hook to the hooks entry in the `local` repo entry.
@@ -59,6 +59,26 @@ id: standardjs-docker
 name: standardjs linter
 entry: vonwig/standardjs:latest
 language: docker_image
-files "\\.(js|jsx|mjs|cjs)$"
+files: "\\.(js|jsx|mjs|cjs)$"
+```
+
+If we detect `Python` in the project, add the following hook to the hooks entry in the `local` repo entry.
+
+```yaml
+id: pylint
+name: pylint linter
+entry: 
+language: docker_image
+files: "\\.py$"
+```
+
+If we detect `Dockerfile` in the project, add the following hook to the hooks entry in the `local` repo entry.
+
+```yaml
+id: buildkit-checks
+name: buildkit checks
+entry: 
+language: docker_image
+files: "$Dockerfile$"
 ```
 
