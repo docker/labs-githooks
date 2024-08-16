@@ -14,7 +14,7 @@ repos:
           - id: check-yaml
           - id: trailing-whitespace
           - id: check-merge-conflict
-    - repo https://github.com/jorisroovers/gitlint
+    - repo: https://github.com/jorisroovers/gitlint
       rev: main
       hooks:
           - id: gitlint
