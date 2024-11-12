@@ -7,21 +7,9 @@ to an assistant that can help developers configure githooks in their project.
 
 ```
 prompts/
-├── git_hooks_with_linguist
-│   ├── 010_system_prompt.md
-│   ├── 020_user_prompt.md
-│   └── README.md
-├── git_hooks
-│   ├── 010_system_prompt.md
-│   ├── 015_system_prompt.md
-│   ├── 020_user_prompt.md
-│   └── README.md
-├── git_hooks_single_step
-│   ├── 010_system_prompt.md
-│   ├── 015_system_prompt.md
-│   ├── 016_system_prompt.md
-│   ├── 020_user_prompt.md
-│   └── README.md
+├── git_hooks_with_linguist.md
+├── git_hooks.md
+├── git_hooks_single_step.md
 ```
 
 ## How to get started
@@ -50,7 +38,7 @@ linguistic analysis on the project and _then_ ask it to setup the githooks.
 You can try this verion of the prompts using OpenAI by running.
 
 ```sh
-./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_with_linguist" {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_with_linguist.md" {root of your project}
 ```
 
 ### git_hooks
@@ -62,7 +50,7 @@ we describe how to setup githooks using the [pre-commit](https://github.com/pre-
 Run this set of prompts using:
 
 ```sh
-./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks" {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks.md" {root of your project}
 ```
 
 ### git_hooks_single_step
@@ -71,7 +59,7 @@ Finally, a set of prompts which can takes the LLM response and then calls a func
 This script will make updates to your .git/hooks folder and add an assistant authored pre-commig-config.yaml file.  It can be run using:
 
 ```sh
-./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step" {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step.md" {root of your project}
 ```
 
 ## Summary
