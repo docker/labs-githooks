@@ -1,4 +1,0 @@
----
-extractors:
-  - name: linguist
----

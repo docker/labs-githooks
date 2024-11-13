@@ -38,7 +38,7 @@ linguistic analysis on the project and _then_ ask it to setup the githooks.
 You can try this verion of the prompts using OpenAI by running.
 
 ```sh
-./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_with_linguist.md" {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_with_linguist.md" {/absolute/path/to/your/project}
 ```
 
 ### git_hooks
@@ -50,7 +50,7 @@ we describe how to setup githooks using the [pre-commit](https://github.com/pre-
 Run this set of prompts using:
 
 ```sh
-./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks.md" {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks.md" {/absolute/path/to/your/project}
 ```
 
 ### git_hooks_single_step
@@ -59,7 +59,7 @@ Finally, a set of prompts which can takes the LLM response and then calls a func
 This script will make updates to your .git/hooks folder and add an assistant authored pre-commig-config.yaml file.  It can be run using:
 
 ```sh
-./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step.md" {root of your project}
+./prompts/run_prompts.sh "github:docker/labs-githooks?ref=main&path=prompts/git_hooks_single_step.md" {/absolute/path/to/your/project}
 ```
 
 ## Summary

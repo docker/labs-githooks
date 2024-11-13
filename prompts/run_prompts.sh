@@ -3,6 +3,7 @@
 docker run --rm \
 	   -it \
 	   -v /var/run/docker.sock:/var/run/docker.sock \
+	   -e "OPENAI_API_KEY_LOCATION=/root" \
 	   --mount type=volume,source=docker-prompts,target=/prompts \
 	   --mount type=bind,source=$HOME/.openai-api-key,target=/root/.openai-api-key \
 	   vonwig/prompts:latest \
